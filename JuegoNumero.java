@@ -148,12 +148,14 @@ public class JuegoNumero {
                     break;
                 case 8:
                     System.out.println("El número a adivinar se encuentra entre "+(numeroAdivinar-1)+" y "+(numeroAdivinar+1)+".");
+                    break;
                 default:
                     break;
             }
             intento = teclado.nextInt();
             numIntento++;
         } 
+        
     }
 
     public static int primerDigito(int numero){
