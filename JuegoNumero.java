@@ -119,16 +119,43 @@ public class JuegoNumero {
                     }
                     break;
                 case 4:
+                    if(esPerfecto(numeroAdivinar)){
+                        System.out.println("El número a adivinar es perfecto.");
+                    }
+                    else{
+                        System.out.println("El número a adivinar no es perfecto.");
+                    }
+                    break; 
+                case 5:
+                    if(esAbundante(numeroAdivinar)){
+                        System.out.println("El número a adivinar es abundante.");
+                    }
+                    else{
+                        System.out.println("El número a adivinar no es abundante.");
+                    }
+                    break;  
+                case 6:
+                    if(esDefectivo(numeroAdivinar)){
+                        System.out.println("El número a adivinar es defectivo.");
+                    }
+                    else{
+                        System.out.println("El número a adivinar no es defectivo.");
+                    }
+                    break;         
+
+                case 7:
                     System.out.println("El número a adivinar empieza por "+primerDigito(numeroAdivinar));    
                     break;
-                case 5:
+                case 8:
                     System.out.println("El número a adivinar se encuentra entre "+(numeroAdivinar-1)+" y "+(numeroAdivinar+1)+".");
+                    break;
                 default:
                     break;
             }
             intento = teclado.nextInt();
             numIntento++;
         } 
+        
     }
 
     public static int primerDigito(int numero){
@@ -148,6 +175,49 @@ public class JuegoNumero {
             }
         }
         return true;
+    }
+    public static boolean esPerfecto(int numero){
+        int suma=0;
+        for (int i = numero - 1; i >= 1; i--) {
+            if (numero%i == 0){
+                suma += i;
+            }
+        }
+    
+        if (numero == suma) {
+            return true;
+        } else {
+            return false;
+            }
+    
+    }
+    public static boolean esDefectivo(int numero){
+        int suma=0;
+        for (int i = 1 ; i <= 1; i++) {
+                    if (numero%i == 0){
+                        suma += i;
+                    }
+                }
+    
+                if (numero > suma) {
+                    return true;
+                } else {
+                    return false;
+                    }
+    }
+    public static boolean esAbundante(int numero){
+        int suma=0;
+        for (int i = 1; i <= numero ; i++) {
+                    if (numero%i == 0){
+                        suma = suma + i;
+                    }
+                }
+    
+                if (suma > 2*numero) {
+                    return true;
+                } else {
+                    return false;
+                }
     }
 
 }
